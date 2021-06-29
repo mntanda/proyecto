@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Infraestucture.Models.movimientoTipo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movimientos</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreMovimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descTipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreMovimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descTipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idMovimientoTipo }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idMovimientoTipo }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idMovimientoTipo })
+        </td>
+    </tr>
+}
+
+</table>

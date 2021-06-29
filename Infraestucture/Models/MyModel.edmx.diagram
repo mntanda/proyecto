@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="37a36d70559b454c94c4dc9733091f9d" Name="Diagram1">
+        <EntityTypeShape EntityType="sisurModel.Contacto" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.detalleMovimiento" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.encabezadoMovimiento" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.Marca" Width="1.5" PointX="1.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.movimientoTipo" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.Persona" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.posicion" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.Producto" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.Proveedor" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.Rol" Width="1.5" PointX="1.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sisurModel.Ubicacion" Width="1.5" PointX="3.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="sisurModel.FK_Contacto_Persona" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_Contacto_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_Contacto_Proveedor1" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_detalleMovimiento_encabezadoMovimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_detalleMovimiento_posicion1" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_detalleMovimiento_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_encabezadoMovimiento_movimientoTipo1" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_encabezadoMovimiento_Persona" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_encabezadoMovimiento_Persona1" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_encabezadoMovimiento_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_Producto_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_Persona_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_posicion_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="sisurModel.FK_posicion_Ubicacion" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sisur</title>
+    <link href=" @Url.Content("~/Content/bootstrap-Sisur.css") " rel="stylesheet" type="text/css" />
+    <link href=" @Url.Content("~/Content/css/stylesSisur2.css") " rel="stylesheet" type="text/css" />
+    <link href=”//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css” rel=”stylesheet”>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top col-sm-12 d-flex justify-content-center">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link" @Html.ActionLink("Principal", "Index", "Home")</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Movimientos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Listar Movimientos", "Index", "Encabezado")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Detalle Movimientos", "Index", "Detalle")</a>
+                                    <!--  <div class="dropdown-divider"></div>-->
+                                    <a class="dropdown-item" @Html.ActionLink("Buscar Orden", "Index", "Encabezado")</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Listado de Productos", "Index", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Productos Por Proveedor", "DetailsProveedor", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Buscar Producto", "Index", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Ver Proveedores Por Producto", "Index", "Contacto")</a>
+                                    <!--  <div class="dropdown-divider"></div>-->
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Inventario
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Listar Inventario", "IndexAdmin", "Posicion")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Buscar Movimiento", "Index", "Posicion")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Consulta Existencias", "Index", "Posicion")</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" @Html.ActionLink("Recibir Producto", "Index", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Trasladar Producto", "Index", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Devolucion", "Index", "Producto")</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Traslados
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Ver Transacciones", "Index", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Nuevo Traslado", "Index", "Producto")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Buscar Traslado", "Index", "Producto")</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Proveedores
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Listar Proveedores", "Index", "Proveedor")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Buscar Proveedor", "Index", "Proveedor")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Editar Proveedor", "Index", "Proveedor")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Registrar Proveedor", "Index", "Proveedor")</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Personas
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Listar Personas", "Index", "Persona")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Agregar Persona", "Index", "Persona")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Editar Persona", "Index", "Persona")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Eliminar Persona", "Index", "Persona")</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Mantenimientos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Marcas", "Index", "Marca")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Roles", "Index", "Rol")</a>
+                                    <!--  <div class="dropdown-divider"></div>-->
+                                    <a class="dropdown-item" @Html.ActionLink("Tipos de Movimientos", "Index", "Movimiento")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Ubicaciones", "Index", "Ubicacion")</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Seguridad
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Buscar Persona", "Index", "Marca")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Asignar Rol", "Index", "Rol")</a>
+                                    <!--  <div class="dropdown-divider"></div>-->
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link">Acerca de</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Sesión
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" @Html.ActionLink("Nuevo", "Index", "Encabezado")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Editar", "Index", "Encabezado")</a>
+                                    <a class="dropdown-item" @Html.ActionLink("Salir", "Index", "Encabezado")</a>
+                                </div>
+                            </li>                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_Menu");
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="col-sm-12 d-flex justify-content-center">
+            <div style="align-self:center">
+                <a href=""><img src="~/Imagenes/logos/audi.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/chevrolet.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/honda.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/jaguar.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/kia.png" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/mazda.png" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/nissan.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/subaru.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/toyota.jpg" width="75px" height="50px" /></a>
+                <a href=""><img src="~/Imagenes/logos/ww.jpg" width="75px" height="50px" /></a>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+
+
+
+
+</html>

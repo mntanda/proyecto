@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Infraestucture.Models.encabezadoMovimiento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> @ViewBag.Titulo</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.documento)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.movimientoTipo.nombreMovimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.nombrePersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona1.nombrePersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor.nombreProveedor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.documento)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.movimientoTipo.nombreMovimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.nombrePersona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona1.nombrePersona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.nombreProveedor)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.consMovimiento }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.consMovimiento }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.consMovimiento })
+        </td>
+    </tr>
+}
+
+</table>

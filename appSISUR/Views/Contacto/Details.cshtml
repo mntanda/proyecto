@@ -1,0 +1,59 @@
+﻿@model Infraestucture.Models.Contacto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Titulo</h2>
+
+<div>
+    <h4>Contacto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.descripcionProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.descripcionProducto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Proveedor.nombreProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proveedor.nombreProveedor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Proveedor.pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proveedor.pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.nombrePersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.nombrePersona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.telefonoPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.telefonoPersona)
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.codProducto }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

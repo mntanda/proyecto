@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Infraestucture.Models.Persona>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Usuarios</h2>
+
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.nombrePersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccionPersona)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.pais)
+        </th>
+       <!-- <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.Rol.descripcionRol)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.nombrePersona)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.direccionPersona)
+    </td>
+  
+    <td>
+        @Html.DisplayFor(modelItem => item.pais)
+    </td>
+    <!--   <td>
+           @Html.DisplayFor(modelItem => item.estado)
+       </td>-->
+    <td>
+        @Html.DisplayFor(modelItem => item.Rol.descripcionRol)
+    </td>
+    <!--  <td>
+          @Html.ActionLink("Editar", "Edit", new { id=item.idPersona }) |
+          @Html.ActionLink("Detalles", "Details", new { id=item.idPersona }) |
+          @Html.ActionLink("Eliminar", "Delete", new { id=item.idPersona })
+      </td>-->
+</tr>
+}
+
+</table>

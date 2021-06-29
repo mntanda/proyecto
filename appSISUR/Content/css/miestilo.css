@@ -1,0 +1,443 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/03/2018, 10:57:20 PM
+    Author     : Usuario
+*/
+
+#menu #lioculto #aoculto{
+    color: #2A2B30; 
+    
+}
+
+#menu #lioculto #aoculto:hover {
+    background-color: #2A2B30;
+}
+
+ .modal-header, h4, .close {
+      background-color:  #4c4c4c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: white;
+  }
+  
+  .etiquetasmodal {
+      color: black;
+  }
+ 
+  /* div 1 (Datos personales)*/ 
+  
+#formDiv1 {
+    
+    position: relative; 
+    width: 900px;
+    height: 350px;
+    background-color: #4c4c4c; 
+    /*box-shadow: 0px 15px 10px -15px black;  */
+    
+    box-shadow: 0px 3px 8px black;
+}
+
+
+#identificacion , #correo, #nombre , #telefono{
+    position: absolute;
+    
+}
+
+#identificacion{
+    
+    margin-top: 30px;
+    margin-left: 10px;
+}
+#nombre {
+    margin-top: 30px; 
+    margin-left: 480px; 
+}
+#correo {
+    margin-top: 170px;
+    margin-left: 10px;
+}
+#telefono {
+    margin-top: 170px;
+    margin-left: 480px;
+}
+
+
+
+  /* div 1 (Datos personales)*/ 
+  
+  
+  
+  /* div 2 (Informacion de usuario)*/ 
+#formDiv2,#formDiv5 {
+    
+    position: relative; 
+    width: 900px;
+    height: 220px;
+    margin-top: 20px;
+    background-color: #4c4c4c; 
+    box-shadow: 0px 3px 8px black;  
+}
+
+
+#nombreusuario , #contrasenaregistro {
+    
+    position: absolute;
+}
+
+#nombreusuario {
+    
+     margin-top: 30px;
+    margin-left: 10px;
+    
+}
+
+#contrasenaregistro {
+    
+     margin-top: 30px;
+    margin-left: 480px;
+    
+}
+
+  /* div 2 (Informacion de usuario)*/ 
+  
+  
+    /* div 3 (Horarios)*/ 
+#formDiv3 {
+    
+     position: relative; 
+   width: 900px;
+    height: 400px;
+   background-color: #4c4c4c; 
+    margin-top: 20px;
+    box-shadow: 0px 3px 8px black;
+    
+}
+
+#formDiv3 tr td, #formDiv3 tr th {
+   
+    width: 200px;
+    text-align: center; 
+    
+}
+
+#formDiv4 tr td, #formDiv4 tr th {
+   
+    width: 160px;
+    text-align: center; 
+    
+}
+
+#formDiv3 tr th , #formDiv4 tr th{
+    color: #5b56ff; 
+}
+
+    /* div 3 (Horarios)*/ 
+    
+    
+    
+/* div 4 (Direcciones) */
+
+#formDiv4 {
+     width: 900px;
+    height: 450px;
+    background-color: #4c4c4c; 
+    margin-top: 20px;
+    box-shadow: 0px 3px 8px black;
+}
+
+/* div 4 (Direcciones) */
+
+.form-control { 
+    
+    width: 400px; 
+}
+
+.etiquetasa {
+    
+    color: red; 
+    text-decoration: none; 
+    
+}
+.etiquetasa:hover { 
+text-decoration: underline; 
+color: red; 
+}
+
+
+#tablaproductos {
+   
+    width: 100%;
+    margin-top: 10px; 
+}
+
+#tablaproductos  tr {
+    width:100%;
+    height: 500px;
+}
+
+
+#tablaproductos tr td {
+   width:280px;
+    height: 500px;
+    
+    
+    
+}
+#tablaproductos  tr td p {
+    color: #004085;
+    text-align: center;
+    
+}
+#tablaproductos tr td h3 {
+    text-align: center;
+    color: lightgray;
+}
+
+.divProduc {
+    
+    width: 300px; 
+    height: auto;
+    padding-bottom: 13px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #2A2B30;
+   
+    box-shadow: 0px 3px 8px black;
+    
+  
+}
+
+#imgProduc {
+
+    width:270px; 
+    margin-left: 15px;
+    margin-top: 10px;
+    height: 250px; 
+    background-color: red;
+    
+}
+
+.botonanadircarrito {
+    
+    position: relative; 
+    background-color: #5b56ff; 
+    margin-left: 50px;
+    width:200px;
+    height: 50px;
+}
+
+.botonanadircarrito:hover {
+     background-color: #5227ff;
+}
+
+
+
+
+#titulocategorias {
+    
+    font-size: 40px;
+    color: white; 
+}
+
+.botonfiltrar {
+    
+    background-color: #cc0000;
+    color: white; 
+    width: 150px; 
+    height : 30px;
+}
+
+.botonfiltrar:hover {
+    background-color: #990000;
+}
+
+
+#formDiv1_1 { 
+    position: relative; 
+    width: 900px;
+    height: 400px;
+    background-color: #4c4c4c; 
+    /*box-shadow: 0px 15px 10px -15px black;  */
+    box-shadow: 0px 3px 8px black;
+
+}
+
+
+
+#formDiv1_1 tr td, #formDiv1_1 tr th {
+   
+    width: 200px;
+    text-align: center; 
+    
+}
+
+/*#formDiv4 tr td, #formDiv4 tr th {
+   
+    width: 160px;
+    text-align: center; 
+    
+}*/
+
+#formDiv1_1 tr th , #formDiv1_1 tr th{
+    color: #5b56ff; 
+}
+
+
+#formDiv2_1 {
+     position: relative; 
+    width: 900px;
+    height: 450px;
+
+    background-color: #4c4c4c; 
+    
+     margin-top: 15px;
+    box-shadow: 0px 3px 8px black;
+}
+
+#formulariocategorias {
+    
+     position: relative; 
+    width: 900px;
+    height: 400px;
+    background-color: #4c4c4c; 
+    /*box-shadow: 0px 15px 10px -15px black;  */
+    box-shadow: 0px 3px 8px black;
+    
+}
+
+
+
+
+#formulariocategorias tr td, #formulariocategorias tr th {
+   
+    width: 200px;
+    text-align: center; 
+    
+}
+
+/*#formDiv4 tr td, #formDiv4 tr th {
+   
+    width: 160px;
+    text-align: center; 
+    
+}*/
+
+#formulariocategorias tr th , #formulariocategorias tr th{
+    color: #5b56ff; 
+}
+
+
+#formDiv3_1 {
+    
+      position: relative; 
+    width: 900px;
+    height: 450px;
+
+    background-color: #4c4c4c; 
+    
+     margin-top: 50px;
+    box-shadow: 0px 3px 8px black;
+    
+}
+
+
+
+
+#formDiv3_1 tr td, #formDiv3_1 tr th {
+   
+    width: 200px;
+    text-align: center; 
+    
+}
+
+/*#formDiv4 tr td, #formDiv4 tr th {
+   
+    width: 160px;
+    text-align: center; 
+    
+}*/
+
+#formDiv3_1 tr th , #formDiv3_1 tr th{
+    color: #5b56ff; 
+}
+
+
+
+#divtablasolicitudes {
+    
+      position: relative; 
+    width: 900px;
+    height: 450px;
+
+    background-color: #4c4c4c; 
+    
+    
+    box-shadow: 0px 3px 8px black;
+    
+}
+
+
+
+
+#divtablasolicitudes tr td, #divtablasolicitudes tr th {
+   
+    width: 200px;
+    text-align: center; 
+    
+}
+
+/*#formDiv4 tr td, #formDiv4 tr th {
+   
+    width: 160px;
+    text-align: center; 
+    
+}*/
+
+#divtablasolicitudes tr th , #divtablasolicitudes tr th{
+    color: #5b56ff; 
+}
+
+
+
+
+
+#divusuariosregistrados {
+    
+      position: relative; 
+    width: 900px;
+    height: 450px;
+    
+    margin-top: 10px;
+
+    background-color: #4c4c4c; 
+    
+    
+    box-shadow: 0px 3px 8px black;
+    
+}
+
+
+
+
+#divusuariosregistrados tr td, #divusuariosregistrados tr th {
+   
+    width: 300px;
+    text-align: center; 
+    
+}
+
+
+#divusuariosregistrados tr th , #divusuariosregistrados tr th{
+    color: #5b56ff; 
+}
+
+.miniMenu{color:black}
+#msj{color:red;}

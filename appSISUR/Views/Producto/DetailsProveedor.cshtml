@@ -1,0 +1,90 @@
+﻿@model Infraestucture.Models.Producto
+
+@{
+    ViewBag.Title = "DetailsProveedor";
+}
+
+<h2>DetailsProveedor</h2>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codProveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcionProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcionProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modeloProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modeloProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantMaxima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantMaxima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantMinima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantMinima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca.nombreMarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca.nombreMarca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codProducto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

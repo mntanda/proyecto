@@ -1,0 +1,49 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">     
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Mantenimiento
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Estudiantes", "Index", "Estudiante")</li>
+                        <li>@Html.ActionLink("Cursos", "Index", "Curso")</li>
+                        <li>@Html.ActionLink("Profesores", "Index", "Profesor")</li>
+                        <li class="nav-divider"></li>
+                        <li>@Html.ActionLink("Países", "Index", "Pais")</li>
+                        <li>@Html.ActionLink("Horarios", "Index", "Horarios")</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle"
+                       data-toggle="dropdown">Procesos <span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Matricula", "Index", "Matricula")</li>
+                        <li>@Html.ActionLink("Ingreso Notas", "Index", "Nota")</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle"
+                       data-toggle="dropdown">Reportes <span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Histórico Notas", "Index", "Nota")</li>
+                        <li>@Html.ActionLink("Ingresos", "Index", "Ingreso")</li>
+                        <li>@Html.ActionLink("Listado Curso", "Index", "Curso")</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle"
+                       data-toggle="dropdown">Seguridad<span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Agregar Usuario", "Index", "Usuario")</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>

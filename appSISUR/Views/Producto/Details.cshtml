@@ -1,0 +1,77 @@
+﻿@model Infraestucture.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2> @ViewBag.titulo</h2>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codProveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcionProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcionProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modeloProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modeloProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantMaxima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantMaxima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantMinima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantMinima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca.nombreMarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca.nombreMarca)
+        </dd>
+      
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idProducto }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

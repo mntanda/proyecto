@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sisurModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="idPersona" />
+      <PropertyRef Name="idProveedor" />
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="idPersona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <Property Name="codProducto" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK_Contacto_Persona" FromRole="Contacto" ToRole="Persona" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Contacto_Producto" FromRole="Contacto" ToRole="Producto" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.FK_Contacto_Proveedor1" FromRole="Contacto" ToRole="Proveedor" />
+  </EntityType>
+  <EntityType Name="detalleMovimiento">
+    <Key>
+      <PropertyRef Name="consMovimiento" />
+      <PropertyRef Name="codProducto" />
+      <PropertyRef Name="idUbicacion" />
+    </Key>
+    <Property Name="consMovimiento" Type="Int32" Nullable="false" />
+    <Property Name="codProducto" Type="Int32" Nullable="false" />
+    <Property Name="idUbicacion" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="encabezadoMovimiento" Relationship="Self.FK_detalleMovimiento_encabezadoMovimiento" FromRole="detalleMovimiento" ToRole="encabezadoMovimiento" />
+    <NavigationProperty Name="posicion" Relationship="Self.FK_detalleMovimiento_posicion1" FromRole="detalleMovimiento" ToRole="posicion" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_detalleMovimiento_Producto" FromRole="detalleMovimiento" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="encabezadoMovimiento">
+    <Key>
+      <PropertyRef Name="consMovimiento" />
+    </Key>
+    <Property Name="consMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idMovimientoTipo" Type="Int32" Nullable="false" />
+    <Property Name="idPersona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="codProveedor" Type="Int32" />
+    <Property Name="idEmpleado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fecha" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="documento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="detalleMovimiento" Relationship="Self.FK_detalleMovimiento_encabezadoMovimiento" FromRole="encabezadoMovimiento" ToRole="detalleMovimiento" />
+    <NavigationProperty Name="movimientoTipo" Relationship="Self.FK_encabezadoMovimiento_movimientoTipo1" FromRole="encabezadoMovimiento" ToRole="movimientoTipo" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK_encabezadoMovimiento_Persona" FromRole="encabezadoMovimiento" ToRole="Persona" />
+    <NavigationProperty Name="Persona1" Relationship="Self.FK_encabezadoMovimiento_Persona1" FromRole="encabezadoMovimiento" ToRole="Persona" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.FK_encabezadoMovimiento_Proveedor" FromRole="encabezadoMovimiento" ToRole="Proveedor" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="idMarca" />
+    </Key>
+    <Property Name="idMarca" Type="Int32" Nullable="false" />
+    <Property Name="nombreMarca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Marca" FromRole="Marca" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="movimientoTipo">
+    <Key>
+      <PropertyRef Name="idMovimientoTipo" />
+    </Key>
+    <Property Name="idMovimientoTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreMovimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
+    <Property Name="descTipo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="encabezadoMovimiento" Relationship="Self.FK_encabezadoMovimiento_movimientoTipo1" FromRole="movimientoTipo" ToRole="encabezadoMovimiento" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="idPersona" />
+    </Key>
+    <Property Name="codPersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPersona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="nombrePersona" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="direccionPersona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="telefonoPersona" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="contrasena" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pais" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Contacto" Relationship="Self.FK_Contacto_Persona" FromRole="Persona" ToRole="Contacto" />
+    <NavigationProperty Name="encabezadoMovimiento" Relationship="Self.FK_encabezadoMovimiento_Persona" FromRole="Persona" ToRole="encabezadoMovimiento" />
+    <NavigationProperty Name="encabezadoMovimiento1" Relationship="Self.FK_encabezadoMovimiento_Persona1" FromRole="Persona" ToRole="encabezadoMovimiento" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK_Persona_Rol" FromRole="Persona" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="posicion">
+    <Key>
+      <PropertyRef Name="idUbicacion" />
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="idUbicacion" Type="Int32" Nullable="false" />
+    <Property Name="codProducto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="detalleMovimiento" Relationship="Self.FK_detalleMovimiento_posicion1" FromRole="posicion" ToRole="detalleMovimiento" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_posicion_Producto" FromRole="posicion" ToRole="Producto" />
+    <NavigationProperty Name="Ubicacion" Relationship="Self.FK_posicion_Ubicacion" FromRole="posicion" ToRole="Ubicacion" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="idProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codProducto" Type="Int32" Nullable="false" />
+    <Property Name="codProveedor" Type="Int32" Nullable="false" />
+    <Property Name="idMarca" Type="Int32" Nullable="false" />
+    <Property Name="descripcionProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="modeloProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cantMaxima" Type="Int32" Nullable="false" />
+    <Property Name="cantMinima" Type="Int32" Nullable="false" />
+    <Property Name="costo" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Contacto" Relationship="Self.FK_Contacto_Producto" FromRole="Producto" ToRole="Contacto" />
+    <NavigationProperty Name="detalleMovimiento" Relationship="Self.FK_detalleMovimiento_Producto" FromRole="Producto" ToRole="detalleMovimiento" />
+    <NavigationProperty Name="Marca" Relationship="Self.FK_Producto_Marca" FromRole="Producto" ToRole="Marca" />
+    <NavigationProperty Name="posicion" Relationship="Self.FK_posicion_Producto" FromRole="Producto" ToRole="posicion" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codProveedor" Type="Int32" Nullable="false" />
+    <Property Name="nombreProveedor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Contacto" Relationship="Self.FK_Contacto_Proveedor1" FromRole="Proveedor" ToRole="Contacto" />
+    <NavigationProperty Name="encabezadoMovimiento" Relationship="Self.FK_encabezadoMovimiento_Proveedor" FromRole="Proveedor" ToRole="encabezadoMovimiento" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="descripcionRol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK_Persona_Rol" FromRole="Rol" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ubicacion">
+    <Key>
+      <PropertyRef Name="idUbicacion" />
+    </Key>
+    <Property Name="idUbicacion" Type="Int32" Nullable="false" />
+    <Property Name="descUbicacion" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="posicion" Relationship="Self.FK_posicion_Ubicacion" FromRole="Ubicacion" ToRole="posicion" />
+  </EntityType>
+  <Association Name="FK_Contacto_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacto_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacto_Proveedor1">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleMovimiento_encabezadoMovimiento">
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="1" />
+    <End Role="detalleMovimiento" Type="Self.detalleMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="encabezadoMovimiento">
+        <PropertyRef Name="consMovimiento" />
+      </Principal>
+      <Dependent Role="detalleMovimiento">
+        <PropertyRef Name="consMovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleMovimiento_posicion1">
+    <End Role="posicion" Type="Self.posicion" Multiplicity="1" />
+    <End Role="detalleMovimiento" Type="Self.detalleMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="posicion">
+        <PropertyRef Name="idUbicacion" />
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="detalleMovimiento">
+        <PropertyRef Name="idUbicacion" />
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleMovimiento_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="detalleMovimiento" Type="Self.detalleMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="detalleMovimiento">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_movimientoTipo1">
+    <End Role="movimientoTipo" Type="Self.movimientoTipo" Multiplicity="1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movimientoTipo">
+        <PropertyRef Name="idMovimientoTipo" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="idMovimientoTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="0..1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_Persona1">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="0..1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_Proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="codProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="idMarca" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_posicion_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="posicion" Type="Self.posicion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="posicion">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_posicion_Ubicacion">
+    <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
+    <End Role="posicion" Type="Self.posicion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubicacion">
+        <PropertyRef Name="idUbicacion" />
+      </Principal>
+      <Dependent Role="posicion">
+        <PropertyRef Name="idUbicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sisurEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" />
+    <EntitySet Name="detalleMovimiento" EntityType="Self.detalleMovimiento" />
+    <EntitySet Name="encabezadoMovimiento" EntityType="Self.encabezadoMovimiento" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" />
+    <EntitySet Name="movimientoTipo" EntityType="Self.movimientoTipo" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" />
+    <EntitySet Name="posicion" EntityType="Self.posicion" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" />
+    <AssociationSet Name="FK_Contacto_Persona" Association="Self.FK_Contacto_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacto_Producto" Association="Self.FK_Contacto_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacto_Proveedor1" Association="Self.FK_Contacto_Proveedor1">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleMovimiento_encabezadoMovimiento" Association="Self.FK_detalleMovimiento_encabezadoMovimiento">
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+      <End Role="detalleMovimiento" EntitySet="detalleMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleMovimiento_posicion1" Association="Self.FK_detalleMovimiento_posicion1">
+      <End Role="posicion" EntitySet="posicion" />
+      <End Role="detalleMovimiento" EntitySet="detalleMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleMovimiento_Producto" Association="Self.FK_detalleMovimiento_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="detalleMovimiento" EntitySet="detalleMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_movimientoTipo1" Association="Self.FK_encabezadoMovimiento_movimientoTipo1">
+      <End Role="movimientoTipo" EntitySet="movimientoTipo" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_Persona" Association="Self.FK_encabezadoMovimiento_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_Persona1" Association="Self.FK_encabezadoMovimiento_Persona1">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_Proveedor" Association="Self.FK_encabezadoMovimiento_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Marca" Association="Self.FK_Producto_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_Rol" Association="Self.FK_Persona_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_posicion_Producto" Association="Self.FK_posicion_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="posicion" EntitySet="posicion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_posicion_Ubicacion" Association="Self.FK_posicion_Ubicacion">
+      <End Role="Ubicacion" EntitySet="Ubicacion" />
+      <End Role="posicion" EntitySet="posicion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

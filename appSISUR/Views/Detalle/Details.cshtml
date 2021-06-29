@@ -1,0 +1,72 @@
+﻿@model Infraestucture.Models.detalleMovimiento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Titulo</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.encabezadoMovimiento.Persona.idPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.encabezadoMovimiento.Persona.idPersona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.encabezadoMovimiento.Persona.nombrePersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.encabezadoMovimiento.Persona.nombrePersona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.descripcionProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.descripcionProducto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.posicion.Ubicacion.descUbicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posicion.Ubicacion.descUbicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.encabezadoMovimiento.movimientoTipo.nombreMovimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.encabezadoMovimiento.movimientoTipo.nombreMovimiento)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.encabezadoMovimiento.Proveedor.nombreProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.encabezadoMovimiento.Proveedor.nombreProveedor)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.consMovimiento }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

@@ -1,0 +1,54 @@
+﻿@model Infraestucture.Models.Proveedor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Titulo</h2>
+
+<div>
+    <h4>Proveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codProveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreProveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+
+     
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idProveedor }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

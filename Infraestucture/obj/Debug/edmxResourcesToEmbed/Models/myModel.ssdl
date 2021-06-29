@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sisurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="idPersona" />
+      <PropertyRef Name="idProveedor" />
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="idPersona" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="detalleMovimiento">
+    <Key>
+      <PropertyRef Name="consMovimiento" />
+      <PropertyRef Name="codProducto" />
+      <PropertyRef Name="idUbicacion" />
+    </Key>
+    <Property Name="consMovimiento" Type="int" Nullable="false" />
+    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="idUbicacion" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="encabezadoMovimiento">
+    <Key>
+      <PropertyRef Name="consMovimiento" />
+    </Key>
+    <Property Name="consMovimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idMovimientoTipo" Type="int" Nullable="false" />
+    <Property Name="idPersona" Type="nvarchar" MaxLength="50" />
+    <Property Name="codProveedor" Type="int" />
+    <Property Name="idEmpleado" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="documento" Type="nchar" MaxLength="10" />
+    <Property Name="estado" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="idMarca" />
+    </Key>
+    <Property Name="idMarca" Type="int" Nullable="false" />
+    <Property Name="nombreMarca" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="movimientoTipo">
+    <Key>
+      <PropertyRef Name="idMovimientoTipo" />
+    </Key>
+    <Property Name="idMovimientoTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreMovimiento" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo" Type="int" Nullable="false" />
+    <Property Name="descTipo" Type="nchar" MaxLength="10" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="idPersona" />
+    </Key>
+    <Property Name="codPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPersona" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idRol" Type="int" Nullable="false" />
+    <Property Name="nombrePersona" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="direccionPersona" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefonoPersona" Type="nvarchar" MaxLength="20" />
+    <Property Name="contrasena" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pais" Type="nchar" MaxLength="25" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="posicion">
+    <Key>
+      <PropertyRef Name="idUbicacion" />
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="idUbicacion" Type="int" Nullable="false" />
+    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="codProveedor" Type="int" Nullable="false" />
+    <Property Name="idMarca" Type="int" Nullable="false" />
+    <Property Name="descripcionProducto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="modeloProducto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantMaxima" Type="int" Nullable="false" />
+    <Property Name="cantMinima" Type="int" Nullable="false" />
+    <Property Name="costo" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codProveedor" Type="int" Nullable="false" />
+    <Property Name="nombreProveedor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pais" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="int" Nullable="false" />
+    <Property Name="descripcionRol" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Ubicacion">
+    <Key>
+      <PropertyRef Name="idUbicacion" />
+    </Key>
+    <Property Name="idUbicacion" Type="int" Nullable="false" />
+    <Property Name="descUbicacion" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Contacto_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacto_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacto_Proveedor1">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
+    <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleMovimiento_encabezadoMovimiento">
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="1" />
+    <End Role="detalleMovimiento" Type="Self.detalleMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="encabezadoMovimiento">
+        <PropertyRef Name="consMovimiento" />
+      </Principal>
+      <Dependent Role="detalleMovimiento">
+        <PropertyRef Name="consMovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleMovimiento_posicion1">
+    <End Role="posicion" Type="Self.posicion" Multiplicity="1" />
+    <End Role="detalleMovimiento" Type="Self.detalleMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="posicion">
+        <PropertyRef Name="idUbicacion" />
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="detalleMovimiento">
+        <PropertyRef Name="idUbicacion" />
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_detalleMovimiento_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="detalleMovimiento" Type="Self.detalleMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="detalleMovimiento">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_movimientoTipo1">
+    <End Role="movimientoTipo" Type="Self.movimientoTipo" Multiplicity="1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movimientoTipo">
+        <PropertyRef Name="idMovimientoTipo" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="idMovimientoTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="0..1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_Persona1">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="0..1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encabezadoMovimiento_Proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="encabezadoMovimiento" Type="Self.encabezadoMovimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="encabezadoMovimiento">
+        <PropertyRef Name="codProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_posicion_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="posicion" Type="Self.posicion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="posicion">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_posicion_Ubicacion">
+    <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
+    <End Role="posicion" Type="Self.posicion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubicacion">
+        <PropertyRef Name="idUbicacion" />
+      </Principal>
+      <Dependent Role="posicion">
+        <PropertyRef Name="idUbicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="idMarca" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sisurModelStoreContainer">
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="detalleMovimiento" EntityType="Self.detalleMovimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="encabezadoMovimiento" EntityType="Self.encabezadoMovimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="movimientoTipo" EntityType="Self.movimientoTipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="posicion" EntityType="Self.posicion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Contacto_Persona" Association="Self.FK_Contacto_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacto_Producto" Association="Self.FK_Contacto_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacto_Proveedor1" Association="Self.FK_Contacto_Proveedor1">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleMovimiento_encabezadoMovimiento" Association="Self.FK_detalleMovimiento_encabezadoMovimiento">
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+      <End Role="detalleMovimiento" EntitySet="detalleMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleMovimiento_posicion1" Association="Self.FK_detalleMovimiento_posicion1">
+      <End Role="posicion" EntitySet="posicion" />
+      <End Role="detalleMovimiento" EntitySet="detalleMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_detalleMovimiento_Producto" Association="Self.FK_detalleMovimiento_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="detalleMovimiento" EntitySet="detalleMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_movimientoTipo1" Association="Self.FK_encabezadoMovimiento_movimientoTipo1">
+      <End Role="movimientoTipo" EntitySet="movimientoTipo" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_Persona" Association="Self.FK_encabezadoMovimiento_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_Persona1" Association="Self.FK_encabezadoMovimiento_Persona1">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encabezadoMovimiento_Proveedor" Association="Self.FK_encabezadoMovimiento_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="encabezadoMovimiento" EntitySet="encabezadoMovimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_Rol" Association="Self.FK_Persona_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_posicion_Producto" Association="Self.FK_posicion_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="posicion" EntitySet="posicion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_posicion_Ubicacion" Association="Self.FK_posicion_Ubicacion">
+      <End Role="Ubicacion" EntitySet="Ubicacion" />
+      <End Role="posicion" EntitySet="posicion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Marca" Association="Self.FK_Producto_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

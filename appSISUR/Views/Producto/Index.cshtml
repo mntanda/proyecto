@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Infraestucture.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Productos</h2>
+
+
+
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.codProducto)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.descripcionProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modeloProducto)
+        </th>
+       
+
+        <th>
+            @Html.DisplayNameFor(model => model.Marca.nombreMarca)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.codProducto)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.descripcionProducto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.modeloProducto)
+    </td>
+   
+    <td>
+        @Html.DisplayFor(modelItem => item.Marca.nombreMarca)
+    </td>
+    <td>
+   
+        @Html.ActionLink("Editar", "Edit", new { id = item.idProducto }, new { @class = "bi bi-pencil" })
+        @Html.ActionLink("Detalles", "Details", new { id = item.idProducto }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.codProducto })
+
+    </td>
+</tr>
+    }
+
+</table>

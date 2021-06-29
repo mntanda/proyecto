@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Infraestucture.Models.Marca>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Marcas</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreMarca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreMarca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idMarca }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idMarca }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idMarca })
+        </td>
+    </tr>
+}
+
+</table>
